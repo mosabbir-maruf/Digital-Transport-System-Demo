@@ -128,7 +128,7 @@ export const companyInfo = {
   phone: "+880 2-7788-9900",
   email: "transport@bms.com",
   established: "2020",
-  website: "bus-management-service-demo.vercel.app",
+  website: "DigitalTransportSystem-demo.vercel.app",
 };
 
 export const routes = [
