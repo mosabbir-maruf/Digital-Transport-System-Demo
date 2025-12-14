@@ -47,7 +47,7 @@ Open [http://localhost:1182](http://localhost:1182)
 ## Project Structure
 
 ```
-bus-journey-showcase-main/
+digital-transport-system/
 ├── public/
 │   ├── avatar/
 │   │   └── hamza-avatar.jpg
