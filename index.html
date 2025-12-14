@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Digital Transport System</title>
+    <meta name="description" content="A modern digital transport system with admin and user dashboards for fleet management, driver tracking, and passenger services" />
+    <meta name="author" content="Mosabbir Maruf" />
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="alternate icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Digital Transport System" />
+    <meta property="og:description" content="A modern digital transport system with admin and user dashboards for fleet management, driver tracking, and passenger services" />
+    <meta property="og:image" id="og-image" content="/meta-graph.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/png" />
+    <meta property="og:url" id="og-url" content="" />
+    <meta property="og:site_name" content="Digital Transport System" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Digital Transport System" />
+    <meta name="twitter:description" content="A modern digital transport system with admin and user dashboards for fleet management, driver tracking, and passenger services" />
+    <meta name="twitter:image" id="twitter-image" content="/meta-graph.png" />
+
+    <!-- WhatsApp, Telegram, and other platforms -->
+    <meta name="image" property="og:image" content="/meta-graph.png" />
+
+    <!-- Script to set absolute URLs for meta tags (works automatically on Vercel) -->
+    <script>
+      (function() {
+        // Get the current origin (works for both localhost and Vercel)
+        const origin = window.location.origin;
+        const imageUrl = origin + '/meta-graph.png';
+        const pageUrl = window.location.href;
+        
+        // Update Open Graph image with absolute URL
+        const ogImage = document.getElementById('og-image');
+        if (ogImage) {
+          ogImage.setAttribute('content', imageUrl);
+        }
+        
+        // Update og:url
+        const ogUrl = document.getElementById('og-url');
+        if (ogUrl) {
+          ogUrl.setAttribute('content', pageUrl);
+        }
+        
+        // Update Twitter image with absolute URL
+        const twitterImage = document.getElementById('twitter-image');
+        if (twitterImage) {
+          twitterImage.setAttribute('content', imageUrl);
+        }
+        
+        // Update the duplicate og:image meta tag with absolute URL
+        const imageMeta = document.querySelector('meta[name="image"]');
+        if (imageMeta) {
+          imageMeta.setAttribute('content', imageUrl);
+        }
+      })();
+    </script>
+  </head>
+
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

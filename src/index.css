@@ -1,0 +1,221 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Base colors */
+    --background: 0 0% 98%;
+    --foreground: 222 47% 11%;
+    
+    /* Cards */
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    
+    /* Popover */
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    
+    /* Admin Primary - Deep Teal */
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    
+    /* Secondary */
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    
+    /* Muted */
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    
+    /* Accent */
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    
+    /* Destructive */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 199 89% 48%;
+    
+    /* Radius */
+    --radius: 1rem;
+    
+    /* Sidebar - Admin */
+    --sidebar-background: 220 27% 14%;
+    --sidebar-foreground: 210 20% 98%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 217 33% 20%;
+    --sidebar-accent-foreground: 210 20% 98%;
+    --sidebar-border: 217 33% 22%;
+    --sidebar-ring: 199 89% 48%;
+    
+    /* Custom - Admin Dashboard */
+    --admin-gradient-start: 199 89% 48%;
+    --admin-gradient-end: 187 85% 43%;
+    --admin-card-hover: 199 89% 48% / 0.05;
+    
+    /* Custom - User Dashboard (bKash inspired) */
+    --bkash-primary: 338 86% 48%;
+    --bkash-primary-light: 338 86% 58%;
+    --bkash-gradient-start: 338 86% 48%;
+    --bkash-gradient-end: 280 72% 45%;
+    --bkash-accent: 338 100% 95%;
+    --bkash-card: 0 0% 100%;
+    
+    /* Chart colors */
+    --chart-1: 199 89% 48%;
+    --chart-2: 187 85% 43%;
+    --chart-3: 172 66% 50%;
+    --chart-4: 338 86% 48%;
+    --chart-5: 280 72% 45%;
+  }
+
+  .dark {
+    --background: 222 47% 5%;
+    --foreground: 210 20% 98%;
+    --card: 222 47% 8%;
+    --card-foreground: 210 20% 98%;
+    --popover: 222 47% 8%;
+    --popover-foreground: 210 20% 98%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 20% 98%;
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 20% 98%;
+    --destructive: 0 62% 50%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 199 89% 48%;
+    --sidebar-background: 222 47% 5%;
+    --sidebar-foreground: 210 20% 98%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+}
+
+@layer utilities {
+  /* Admin gradients */
+  .admin-gradient {
+    background: linear-gradient(135deg, hsl(var(--admin-gradient-start)), hsl(var(--admin-gradient-end)));
+  }
+  
+  .admin-gradient-text {
+    background: linear-gradient(135deg, hsl(var(--admin-gradient-start)), hsl(var(--admin-gradient-end)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* bKash gradients */
+  .bkash-gradient {
+    background: linear-gradient(135deg, hsl(var(--bkash-gradient-start)), hsl(var(--bkash-gradient-end)));
+  }
+  
+  .bkash-gradient-soft {
+    background: linear-gradient(135deg, hsl(var(--bkash-primary) / 0.1), hsl(var(--bkash-gradient-end) / 0.1));
+  }
+  
+  /* Card effects */
+  .card-hover {
+    @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .glass-card {
+    @apply backdrop-blur-xl bg-white/80 border border-white/20;
+  }
+  
+  /* Animations */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+  
+  .animate-pulse-soft {
+    animation: pulse-soft 2s ease-in-out infinite;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.5s ease-out;
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.3s ease-out;
+  }
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes pulse-soft {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: hsl(var(--muted));
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: hsl(var(--muted-foreground) / 0.3);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: hsl(var(--muted-foreground) / 0.5);
+}
